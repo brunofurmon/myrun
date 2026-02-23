@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: myrun-postgres
+    environment:
+      POSTGRES_USER: myrun
+      POSTGRES_PASSWORD: myrun
+      POSTGRES_DB: myrun_development
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
