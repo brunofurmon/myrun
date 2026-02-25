@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   get "/health", to: "health#show"
   
   get "/users/:id", to: "users#show"
+
+  get "/runs/:id", to: "runs#show"
+  post "/runs", to: "runs#create"
 end

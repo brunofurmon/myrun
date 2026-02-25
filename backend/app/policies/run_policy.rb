@@ -1,12 +1,14 @@
-class UserPolicy
-  attr_reader :user, :record
-
+class RunPolicy
   def initialize(user, record)
     @user = user
     @record = record
   end
 
   def show?
-    UserAccess.new(user, record).allowed?
+    RunAccess.new(user, record).allowed?
+  end
+
+  def create?
+    true
   end
 end

@@ -1,4 +1,4 @@
-class Access
+class UserAccess
   def initialize(actor, target)
     @actor = actor
     @target = target
