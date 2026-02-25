@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   
   post "/login", to: "authentication#login"
   get "/health", to: "health#show"
+  
+  get "/users/:id", to: "users#show"
 end
