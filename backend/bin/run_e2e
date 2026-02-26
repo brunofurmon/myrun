@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+set -e
+
+echo "== E2E policy test =="
+
+RAILS_ENV=test bundle exec rails db:drop db:create db:migrate
+RAILS_ENV=test bundle exec rspec spec/requests/policy_e2e_spec.rb
+RAILS_ENV=test bundle exec rails db:drop
+
+echo "== E2E completed successfully =="

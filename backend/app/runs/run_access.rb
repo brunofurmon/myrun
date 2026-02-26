@@ -6,9 +6,10 @@ class RunAccess
 
   def allowed?
     return true if run.user_id == actor.id
+    return false if run.only_me?
     return true if run.open?
     return true if friends?
-          
+
     false
   end
 
