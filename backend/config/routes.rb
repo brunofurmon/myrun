@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   get "/runs/:id", to: "runs#show"
   post "/runs", to: "runs#create"
+
+  post "follows", to: "follows#create"
+  post "follows/:id/approve", to: "follows#approve"
 end
