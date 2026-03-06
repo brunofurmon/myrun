@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
   get "/users/:id", to: "users#show"
 
+  get "/runs", to: "runs#index"
   get "/runs/:id", to: "runs#show"
   post "/runs", to: "runs#create"
 

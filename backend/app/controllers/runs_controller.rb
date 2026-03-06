@@ -1,6 +1,12 @@
 class RunsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    runs = RunFeed.new(current_user).visible_runs.limit(50)
+
+    render json: runs.map { |r| RunSerializer.new(r) }
+  end
+
   def create
     run = current_user.runs.build(run_params)
     authorize run, :create?
